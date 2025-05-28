@@ -1,0 +1,23 @@
+<!-- Importar AysncPipe en comp.ts -->
+<!-- Es un pipe que se suscribe a un observable -->
+<div class="h-screen flex items-center">
+
+    <div class="flex flex-col items-center justify-center gap-6 p-6 bg-white rounded-2xl shadow-lg w-lg mx-auto mt-10">
+
+        @if (dataCat$ | async; as data) {
+        <img [src]="data[0].url" alt="Gato aleatorio" class="w-60 h-60 object-cover rounded">
+
+        <button (click)="loadCat()"
+            class="px-5 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 active:scale-95 transition duration-200">
+            😺 Nuevo gato
+        </button>
+        } @else {
+        <p class="text-gray-700 text-lg w-60 h-60 text-center">Cargando gato...</p>
+        }
+
+    </div>
+
+</div>
+
+
+<!-- TheCatAPI siempre devuelve un array de resultados -->

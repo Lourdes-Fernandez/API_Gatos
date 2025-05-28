@@ -1,0 +1,14 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center p-4">
+    @if (dataCats$ | async; as data) {
+    @for (cat of data; track cat.id) {
+    <div class="flex justify-center items-center bg-white p-3 rounded shadow">
+        <img [src]="cat.url" alt="Gato" class="w-60 h-60 object-cover rounded" />
+    </div>
+    }
+    } @else {
+    <div></div>
+    <div class="bg-white/50 rounded-3xl">
+        <p class="text-center text-gray-900 col-span-full p-5 text-2xl">Cargando gatos...</p>
+    </div>
+    }
+</div>
